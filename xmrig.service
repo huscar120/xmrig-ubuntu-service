@@ -4,7 +4,7 @@ Description=XMRig miner service
 [Service]
 Type=forking
 User=root
-ExecStart=/bin/sh ~/xmrig-ubuntu-service/xmrig/build/start.sh
+ExecStart=/bin/sh /opt/xmrig/build/start.sh
 Restart=always
 RestartSec=3
 
