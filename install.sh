@@ -9,8 +9,10 @@ mkdir xmrig/build && cd xmrig/scripts
 cmake .. -DXMRIG_DEPS=scripts/deps
 make -j$(nproc)
 
-
-bash -c "echo vm.nr_hugepages=1280 >> /etc/sysctl.conf"
-mv ~/xmrig-ubuntu-service/xmrig.service /etc/systemd/system/
-mv start.sh ~/xmrig-ubuntu-service/xmrig/build/
+#bash -c "echo vm.nr_hugepages=1280 >> /etc/sysctl.conf"
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+cp $SCRIPTPATH/xmrig.service /etc/systemd/system/
+cp $SCRIPTPATH/start.sh $SCRIPTPATH/xmrig/build/
+touch $SCRIPTPATH/xmrig/build/config.json
+cp -r $SCRIPTPATH/xmrig /opt/
 systemctl daemon-reload
