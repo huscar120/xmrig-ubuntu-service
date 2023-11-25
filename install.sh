@@ -11,6 +11,6 @@ make -j$(nproc)
 
 
 bash -c "echo vm.nr_hugepages=1280 >> /etc/sysctl.conf"
-mv xmrig.service /etc/systemd/system/
-mv start.sh xmrig/build/
+mv ~/xmrig-ubuntu-service/xmrig.service /etc/systemd/system/
+mv start.sh ~/xmrig-ubuntu-service/xmrig/build/
 systemctl daemon-reload
