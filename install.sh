@@ -2,7 +2,7 @@
 apt-get update -y
 apt-get upgrade -y
 
-apt-get install git build-essential cmake automake libtool autoconf
+apt-get install git build-essential cmake automake libtool autoconf -y
 git clone https://github.com/xmrig/xmrig.git
 mkdir xmrig/build && cd xmrig/scripts
 ./build_deps.sh && cd ../build
