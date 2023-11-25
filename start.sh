@@ -1,3 +1,3 @@
 #!/bin/sh
-cd ~/xmrig-ubuntu-service/xmrig/build/
-./xmrig
+cd /opt/xmrig/build/
+./xmrig -B
