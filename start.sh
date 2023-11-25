@@ -1,3 +1,3 @@
 #!/bin/sh
-cd /home/omega/xmrig/build/
+cd ~/xmrig-ubuntu-service/xmrig/build/
 ./xmrig
