@@ -2,7 +2,10 @@
 apt-get update -y
 apt-get upgrade -y
 
+cd "$(dirname "$0")"
+DIR="$(pwd)"
 apt-get install git build-essential cmake automake libtool autoconf -y
+cd /opt/
 git clone https://github.com/xmrig/xmrig.git
 mkdir xmrig/build && cd xmrig/scripts
 ./build_deps.sh && cd ../build
@@ -10,9 +13,7 @@ cmake .. -DXMRIG_DEPS=scripts/deps
 make -j$(nproc)
 
 #bash -c "echo vm.nr_hugepages=1280 >> /etc/sysctl.conf"
-SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-cp $SCRIPTPATH/xmrig.service /etc/systemd/system/
-cp $SCRIPTPATH/start.sh $SCRIPTPATH/xmrig/build/
-touch $SCRIPTPATH/xmrig/build/config.json
-cp -r $SCRIPTPATH/xmrig /opt/
+cp $DIR/xmrig.service /etc/systemd/system/
+cp $DIR/start.sh /opt/xmrig/build/
+touch /opt/xmrig/build/config.json
 systemctl daemon-reload
