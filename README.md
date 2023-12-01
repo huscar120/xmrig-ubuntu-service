@@ -10,6 +10,6 @@ To use the script please follow the steps above.
 5. sudo nano /opt/xmrig/build/config.json
 6. Copy data into config.json
 
-You can use systemcl comands to start, stop and enable xmrig daemon.
+You can use systemctl comands to start, stop and enable xmrig daemon.
 
 For more information feel free to contact us with the following email felipe@omegahost.cl
